@@ -1,7 +1,7 @@
 base:
   project_name: HandWritten
   ckpt_root: ./ckpt
-  seed: 7
+  seed: 13
   lr: 0.005
   weight_decay: 0.00001
   batch_size: 2000
