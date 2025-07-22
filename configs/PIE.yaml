@@ -13,8 +13,6 @@ base:
   annealing_step: 50
   loss : edl_HENN
   w : 2
-pre:
-  n_epochs: 500
 dataset:
   datasetName: PIE
   dataPath: datasets\PIE_face_10.mat
