@@ -97,7 +97,7 @@ def prototype_alignment_loss(num_classes, num_views, batch_size, prototypes, lab
         selected_prototypes = view_prototypes[labels]
         cos_sim = F.cosine_similarity(selected_prototypes, one_hot, dim=1)
         proto_loss = 1 - cos_sim
-        loss += proto_loss.sum()
+        loss += proto_loss.sum()*0.1
     return loss / (batch_size * num_views)
     
 
@@ -119,7 +119,7 @@ def prototype_neighbor_loss(num_classes, num_views, batch_size, features, protot
             prototype = view_prototypes[c]
             knn_embeddings = view_features
             cosine_sim = F.cosine_similarity(prototype.unsqueeze(0), knn_embeddings)
-            loss += (1 - cosine_sim).sum()
+            loss += (1 - cosine_sim).sum()*0.1
         loss /= (num_classes * k)
     return loss
 
@@ -156,7 +156,7 @@ def triplet_loss_knn(num_classes, num_views, batch_size, features, prototypes, Y
                 loss_v += F.relu(margin - pos_sim + neg_sim).mean()
         loss += loss_v
     loss /= (num_classes * k)
-    loss = loss.mean()
+    loss = loss.mean()*0.1
     return loss
 
 def get_dc_loss(evidences, device):
