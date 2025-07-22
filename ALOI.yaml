@@ -1,0 +1,21 @@
+base:
+  project_name: ALOI
+  ckpt_root: ./ckpt
+  seed: 20
+  lr: 0.005
+  weight_decay: 0.00005
+  batch_size: 2160
+  n_epochs: 200
+  num_workers: 8
+  gpu_id: 1
+  num_classes: 100
+  num_views: 4
+  annealing_step: 1000
+  neighbor : 20
+  loss : edl_HENN
+  w : 2
+dataset:
+  datasetName: ALOI
+  dataPath: datasets\ALOI_100.mat
+  train_mode: regression
+

@@ -1,0 +1,23 @@
+base:
+  project_name: HandWritten
+  ckpt_root: ./ckpt
+  seed: 7
+  lr: 0.005
+  weight_decay: 0.00001
+  batch_size: 2000
+  n_epochs: 500
+  num_workers: 8
+  gpu_id: 1
+  num_classes: 10
+  num_views: 6
+  annealing_step: 50
+  loss : edl_HENN
+  neighbor : 20
+  w : 2
+pre:
+  n_epochs: 100
+dataset:
+  datasetName: HandWritten
+  dataPath: datasets\handWritten.mat
+  train_mode: regression
+
