@@ -1,11 +1,11 @@
 base:
   project_name: PIE
   ckpt_root: ./ckpt
-  seed: 57
+  seed: 13
   lr: 0.005
   weight_decay: 0.00005
   batch_size: 680
-  n_epochs: 800
+  n_epochs: 300
   num_workers: 8
   gpu_id: 1
   num_classes: 68
