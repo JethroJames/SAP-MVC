@@ -14,8 +14,6 @@ base:
   loss : edl_HENN
   neighbor : 20
   w : 2
-pre:
-  n_epochs: 100
 dataset:
   datasetName: HandWritten
   dataPath: datasets\handWritten.mat
