@@ -5,4 +5,5 @@ Trustworthy multi-view classification (TMVC) addresses the challenge of achievin
 # How to set conflict datasets?
 
 Add code lines to the text:
+
 dataset.postprocessing(test_index, addNoise=True, sigma=0.5, ratio_noise=0.1, addConflict=True, ratio_conflict=0.4)
