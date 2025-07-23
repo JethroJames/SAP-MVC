@@ -14,6 +14,9 @@ base:
   loss : edl_HENN
   neighbor : 20
   w : 2
+  alpha: 1
+  beta: 0.0005
+  gamma: 1
 dataset:
   datasetName: HandWritten
   dataPath: datasets\handWritten.mat
