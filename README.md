@@ -11,7 +11,9 @@ Through extensive experiments on multiple public datasets, our method demonstrat
 
 You can run the main.py for each dataset individually by using the following commands.
 
-    ```python main.py```
+    ```
+    python main.py
+    ```
 
 Add code lines to the text:
 
