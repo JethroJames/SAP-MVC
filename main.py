@@ -13,7 +13,7 @@ import torch.nn as nn
 from data import HandWritten, PIE,  ALOI
 from model import SAPRMVL, fuse_evidence, compute_similarity_weights
 import utils
-from loss_function import prototype_alignment_loss,prototype_neighbor_loss,triplet_loss_knn, EDL_loss, fusion_loss, compute_saprmvl_loss
+from loss_function import prototype_alignment_loss,prototype_neighbor_loss,triplet_loss_knn, EDL_loss
 
 parser = argparse.ArgumentParser() 
 #parser.add_argument('--config_file', type=str, default='configs/HandWritten.yaml') 
