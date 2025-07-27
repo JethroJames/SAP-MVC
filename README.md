@@ -7,6 +7,14 @@ To address these limitations, we propose a prototype-based TMVC framework that r
 
 Through extensive experiments on multiple public datasets, our method demonstrates improved classification performance and robustness over prevailing TMVC baselines, particularly in complex settings where view conflict and uncertainty are prominent.
 
+## How to run?
+
+You can run the main.py for each dataset individually by using the following commands.
+
+## Where to find the parameter configuration?
+
+Detailed parameter configuration is in the config folder.
+
 ## How to set conflict datasets?
 
 Add code lines to the text:
