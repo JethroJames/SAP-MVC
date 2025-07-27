@@ -18,8 +18,6 @@ from loss_function import prototype_alignment_loss,prototype_neighbor_loss,tripl
 parser = argparse.ArgumentParser() 
 #parser.add_argument('--config_file', type=str, default='configs/HandWritten.yaml') 
 parser.add_argument('--config_file', type=str, default='configs/PIE.yaml')
-#parser.add_argument('--config_file', type=str, default='configs/Scene.yaml')
-#parser.add_argument('--config_file', type=str, default='configs/Animal.yaml')
 #parser.add_argument('--config_file', type=str, default='configs/ALOI.yaml')
 parser.add_argument('--seed', type=int, default=57) 
 parser.add_argument('--gpu_id', type=int, default=-1) 
