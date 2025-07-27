@@ -9,11 +9,21 @@ Through extensive experiments on multiple public datasets, our method demonstrat
 
 ## How to run?
 
-You can run the main.py for each dataset individually by using the following commands.
-
+You can run the main.py by using the following commands.
     
     python main.py
-    
+
+Regarding the selection of different datasets, you only need to find the corresponding data set comment lines shown below in the main function, remove the comment lines of the data sets you need to run, and comment out the unnecessary comment lines.
+
+If you want to run the PIE dataset, select it in the following code:
+
+    #parser.add_argument('--config_file', type=str, default='configs/HandWritten.yaml') 
+    parser.add_argument('--config_file', type=str, default='configs/PIE.yaml')
+    #parser.add_argument('--config_file', type=str, default='configs/ALOI.yaml')
+
+    #dataset = HandWritten()
+    dataset = PIE()
+    #dataset = ALOI()
 
 Add code lines to the text:
 
