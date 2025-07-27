@@ -25,9 +25,9 @@ If you want to run the PIE dataset, select it in the following code:
     dataset = PIE()
     #dataset = ALOI()
 
-Add code lines to the text:
+If you want to run the conflict dataset, remove the comment symbol in the following code
 
-dataset.postprocessing(test_index, addNoise=True, sigma=0.5, ratio_noise=0.1, addConflict=True, ratio_conflict=0.4)
+    dataset.postprocessing(test_index, addNoise=True, sigma=0.5, ratio_noise=0.1, addConflict=True, ratio_conflict=0.4)
 
 ## Where to find the parameter configuration?
 
