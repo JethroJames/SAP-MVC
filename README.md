@@ -11,12 +11,13 @@ Through extensive experiments on multiple public datasets, our method demonstrat
 
 You can run the main.py for each dataset individually by using the following commands.
 
-## Where to find the parameter configuration?
-
-Detailed parameter configuration is in the config folder.
-
-## How to set conflict datasets?
+python main.py
 
 Add code lines to the text:
 
 dataset.postprocessing(test_index, addNoise=True, sigma=0.5, ratio_noise=0.1, addConflict=True, ratio_conflict=0.4)
+
+## Where to find the parameter configuration?
+
+Detailed parameter configuration is in the config folder.
+
