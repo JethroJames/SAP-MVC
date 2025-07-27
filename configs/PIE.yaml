@@ -1,6 +1,5 @@
 base:
   project_name: PIE
-  ckpt_root: ./ckpt
   seed: 13
   lr: 0.005
   weight_decay: 0.00005
@@ -11,7 +10,6 @@ base:
   num_classes: 68
   num_views: 3
   annealing_step: 50
-  loss : edl_HENN
   w : 2
   alpha: 1
   beta: 0.0005
@@ -19,5 +17,4 @@ base:
 dataset:
   datasetName: PIE
   dataPath: datasets\PIE_face_10.mat
-  train_mode: regression
 
