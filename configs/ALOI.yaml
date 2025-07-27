@@ -1,6 +1,5 @@
 base:
   project_name: ALOI
-  ckpt_root: ./ckpt
   seed: 91
   lr: 0.005
   weight_decay: 0.00005
@@ -11,8 +10,6 @@ base:
   num_classes: 100
   num_views: 4
   annealing_step: 1000
-  neighbor : 20
-  loss : edl_HENN
   w : 2
   alpha: 0.1
   beta: 0.00005
@@ -20,5 +17,4 @@ base:
 dataset:
   datasetName: ALOI
   dataPath: datasets\ALOI_100.mat
-  train_mode: regression
 
