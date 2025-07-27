@@ -1,4 +1,4 @@
-# SAP-MVC
+# Structure-Aware Prototype Guided Trusted Multi-View Classification
 
 ## Motivation
 Trustworthy multi-view classification (TMVC) is inherently challenging due to the heterogeneity, inconsistency, and potential conflicts that arise among different data sources. These issues not only complicate the integration of multi-view information but also compromise the reliability of classification outcomes. Existing TMVC approaches typically rely on globally dense neighbor relationships to capture intra-view dependencies, which results in high computational costs and limited scalability. More importantly, these methods often lack explicit mechanisms to enforce inter-view consistency or to ensure that the aggregated evidence reflects true class-level consensus.
