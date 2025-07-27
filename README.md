@@ -15,7 +15,7 @@ You can run the main.py by using the following commands.
 
 Regarding the selection of different datasets, you only need to find the corresponding data set comment lines shown below in the main function, remove the comment lines of the data sets you need to run, and comment out the unnecessary comment lines.
 
-If you want to run the PIE dataset, select it in the following code:
+For example, if you want to run the PIE dataset, select it in the following code:
 
     #parser.add_argument('--config_file', type=str, default='configs/HandWritten.yaml') 
     parser.add_argument('--config_file', type=str, default='configs/PIE.yaml')
