@@ -1,6 +1,5 @@
 base:
   project_name: HandWritten
-  ckpt_root: ./ckpt
   seed: 13
   lr: 0.005
   weight_decay: 0.00001
@@ -11,8 +10,6 @@ base:
   num_classes: 10
   num_views: 6
   annealing_step: 50
-  loss : edl_HENN
-  neighbor : 20
   w : 2
   alpha: 1
   beta: 0.0005
@@ -20,5 +17,4 @@ base:
 dataset:
   datasetName: HandWritten
   dataPath: datasets\handWritten.mat
-  train_mode: regression
 
