@@ -17,4 +17,4 @@ base:
 dataset:
   datasetName: PIE
   dataPath: datasets\PIE_face_10.mat
-
+  add_postprocessing: false
