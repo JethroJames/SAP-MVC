@@ -9,26 +9,32 @@ Through extensive experiments on multiple public datasets, our method demonstrat
 
 ## How to run?
 
-You can run the main.py by using the following commands.
-    
-    python main.py
+You can run training on each dataset with or without postprocessing (noise and conflict) by specifying the config file. 
 
-Regarding the selection of different datasets, you only need to find the corresponding data set comment lines shown below in the main function, remove the comment lines of the data sets you need to run, and comment out the unnecessary comment lines.
+1. PIE Dataset (Normal) Train on the PIE dataset without adding conflicts or noise: bash
 
-For example, if you want to run the PIE dataset, the following code is like this:
+   python main.py --config_file configs/PIE.yaml
+   
+2. PIE Dataset (Conflict) Train on the PIE dataset with conflict and noise postprocessing enabled: bash
+  
+   python main.py --config_file configs/PIE_conflict.yaml
+   
+3. HandWritten Dataset (Normal) Train on the HandWritten dataset without conflict/noise: bash
 
-    #parser.add_argument('--config_file', type=str, default='configs/HandWritten.yaml') 
-    parser.add_argument('--config_file', type=str, default='configs/PIE.yaml')
-    #parser.add_argument('--config_file', type=str, default='configs/ALOI.yaml')
+   python main.py --config_file configs/HandWritten.yaml
+   
+4. HandWritten Dataset (Conflict) Train on the HandWritten dataset with conflict and noise postprocessing: bash
+  
+   python main.py --config_file configs/HandWritten_conflict.yaml
+   
+5. ALOI Dataset (Normal) Train on the ALOI dataset without conflict/noise: bash
 
-    #dataset = HandWritten()
-    dataset = PIE()
-    #dataset = ALOI()
+    python main.py --config_file configs/ALOI.yaml
+   
+6. ALOI Dataset (Conflict) Train on the ALOI dataset with conflict and noise postprocessing: bash
 
-If you want to run the conflict dataset, remove the comment symbol in the following code
-
-    dataset.postprocessing(test_index, addNoise=True, sigma=0.5, ratio_noise=0.1, addConflict=True, ratio_conflict=0.4)
-
+   python main.py --config_file configs/ALOI_conflict.yaml
+  
 ## Where to find the parameter configuration?
 
 Detailed parameter configuration is in the config folder.
