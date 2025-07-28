@@ -39,7 +39,4 @@ You can run training on each dataset with or without postprocessing (noise and c
     ```
     python main.py --config_file configs/ALOI_conflict.yaml
     ```
-## Where to find the parameter configuration?
-
-Detailed parameter configuration is in the config folder.
 
