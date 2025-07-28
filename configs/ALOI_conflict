@@ -1,0 +1,20 @@
+base:
+  project_name: ALOI_conflict
+  seed: 91
+  lr: 0.005
+  weight_decay: 0.00005
+  batch_size: 2160
+  n_epochs: 200
+  num_workers: 8
+  gpu_id: 1
+  num_classes: 100
+  num_views: 4
+  annealing_step: 1000
+  w : 2
+  alpha: 0.1
+  beta: 0.00005
+  gamma: 0.1
+dataset:
+  datasetName: ALOI
+  dataPath: datasets\ALOI_100.mat
+  add_postprocessing: true
