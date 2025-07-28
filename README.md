@@ -11,27 +11,27 @@ Through extensive experiments on multiple public datasets, our method demonstrat
 
 You can run training on each dataset with or without postprocessing (noise and conflict) by specifying the config file. 
 
-1. PIE Dataset (Normal) Train on the PIE dataset without adding conflicts or noise: bash
+1. PIE Dataset (Normal) Train on the PIE dataset without adding conflicts or noise: 
 
     python main.py --config_file configs/PIE.yaml
    
-2. PIE Dataset (Conflict) Train on the PIE dataset with conflict and noise postprocessing enabled: bash
+2. PIE Dataset (Conflict) Train on the PIE dataset with conflict and noise postprocessing enabled:
   
     python main.py --config_file configs/PIE_conflict.yaml
    
-3. HandWritten Dataset (Normal) Train on the HandWritten dataset without conflict/noise: bash
+3. HandWritten Dataset (Normal) Train on the HandWritten dataset without conflict/noise: 
 
     python main.py --config_file configs/HandWritten.yaml
    
-4. HandWritten Dataset (Conflict) Train on the HandWritten dataset with conflict and noise postprocessing: bash
+4. HandWritten Dataset (Conflict) Train on the HandWritten dataset with conflict and noise postprocessing: 
   
     python main.py --config_file configs/HandWritten_conflict.yaml
    
-5. ALOI Dataset (Normal) Train on the ALOI dataset without conflict/noise: bash
+5. ALOI Dataset (Normal) Train on the ALOI dataset without conflict/noise: 
 
     python main.py --config_file configs/ALOI.yaml
    
-6. ALOI Dataset (Conflict) Train on the ALOI dataset with conflict and noise postprocessing: bash
+6. ALOI Dataset (Conflict) Train on the ALOI dataset with conflict and noise postprocessing: 
 
     python main.py --config_file configs/ALOI_conflict.yaml
   
