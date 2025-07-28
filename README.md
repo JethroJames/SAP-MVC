@@ -25,7 +25,7 @@ You can run training on each dataset with or without postprocessing (noise and c
    
 4. HandWritten Dataset (Conflict) Train on the HandWritten dataset with conflict and noise postprocessing: 
   
-    python main.py --config_file configs/HandWritten_conflict.yaml
+    `python main.py --config_file configs/HandWritten_conflict.yaml`
    
 5. ALOI Dataset (Normal) Train on the ALOI dataset without conflict/noise: 
 
