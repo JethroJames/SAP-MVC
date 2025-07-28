@@ -1,0 +1,20 @@
+base:
+  project_name: HandWritten_conflict
+  seed: 13
+  lr: 0.005
+  weight_decay: 0.00001
+  batch_size: 2000
+  n_epochs: 800
+  num_workers: 8
+  gpu_id: 1
+  num_classes: 10
+  num_views: 6
+  annealing_step: 50
+  w : 2
+  alpha: 1
+  beta: 0.0005
+  gamma: 1
+dataset:
+  datasetName: HandWritten
+  dataPath: datasets\handWritten.mat
+  add_postprocessing: true
