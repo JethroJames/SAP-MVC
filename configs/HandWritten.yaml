@@ -17,4 +17,4 @@ base:
 dataset:
   datasetName: HandWritten
   dataPath: datasets\handWritten.mat
-
+  add_postprocessing: false
