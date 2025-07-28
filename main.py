@@ -55,7 +55,7 @@ test_loader = DataLoader(Subset(dataset, test_index), batch_size=args.base.batch
 print(num_samples,num_classes,num_views,dims)
 
 
-def train_proto(args, alpha=1, beta=0.005, gamma=1, margin=1):
+def train_proto(args, alpha=args.base.alphaa, beta=args.base.beta, gamma=args.base.gamma, margin=1):
     best_acc = 0.0
     best_model_state = None
     gg = 0.1
