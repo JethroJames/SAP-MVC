@@ -36,7 +36,7 @@ def set_seed(seed):
         torch.cuda.manual_seed_all(seed)
         torch.backends.cudnn.deterministic = True
         torch.backends.cudnn.benchmark = False
-seed = 57
+seed = args.base.seed
 set_seed(seed)
 
 #dataset = HandWritten()
