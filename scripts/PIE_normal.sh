@@ -1,2 +1,2 @@
 #!/bin/bash
-python main.py --config_file configs/HandWritten.yaml
+python main.py --config_file configs/PIE.yaml
