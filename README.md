@@ -13,7 +13,7 @@ You can run training on each dataset with or without postprocessing (noise and c
 
 1. PIE Dataset (Normal) Train on the PIE dataset without adding conflicts or noise: 
 
-    python main.py --config_file configs/PIE.yaml
+    ```python main.py --config_file configs/PIE.yaml```
    
 2. PIE Dataset (Conflict) Train on the PIE dataset with conflict and noise postprocessing enabled:
   
