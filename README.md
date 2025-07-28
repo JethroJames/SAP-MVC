@@ -17,26 +17,28 @@ You can run training on each dataset with or without postprocessing (noise and c
    python main.py --config_file configs/PIE.yaml
     ```
    
-3. PIE Dataset (Conflict) Train on the PIE dataset with conflict and noise postprocessing enabled:
+2. PIE Dataset (Conflict) Train on the PIE dataset with conflict and noise postprocessing enabled:
   
-    python main.py --config_file configs/PIE_conflict.yaml
-   
-4. HandWritten Dataset (Normal) Train on the HandWritten dataset without conflict/noise: 
+   ```
+   python main.py --config_file configs/PIE_conflict.yaml
+   ```
 
+3. HandWritten Dataset (Normal) Train on the HandWritten dataset without conflict/noise: 
+    ```
     python main.py --config_file configs/HandWritten.yaml
-   
-5. HandWritten Dataset (Conflict) Train on the HandWritten dataset with conflict and noise postprocessing: 
-  
+    ```
+4. HandWritten Dataset (Conflict) Train on the HandWritten dataset with conflict and noise postprocessing: 
+     ``` 
     `python main.py --config_file configs/HandWritten_conflict.yaml`
-   
-6. ALOI Dataset (Normal) Train on the ALOI dataset without conflict/noise: 
-
+     ```
+5. ALOI Dataset (Normal) Train on the ALOI dataset without conflict/noise: 
+```
     python main.py --config_file configs/ALOI.yaml
-   
-7. ALOI Dataset (Conflict) Train on the ALOI dataset with conflict and noise postprocessing: 
-
+   ```
+6. ALOI Dataset (Conflict) Train on the ALOI dataset with conflict and noise postprocessing: 
+```
     python main.py --config_file configs/ALOI_conflict.yaml
-  
+  ```
 ## Where to find the parameter configuration?
 
 Detailed parameter configuration is in the config folder.
