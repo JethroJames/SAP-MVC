@@ -51,7 +51,8 @@ np.random.shuffle(index)
 train_index, test_index = index[:int(0.8 * num_samples)], index[int(0.8 * num_samples):]
 train_loader = DataLoader(Subset(dataset, train_index), batch_size=args.base.batch_size, shuffle=True)
 test_loader = DataLoader(Subset(dataset, test_index), batch_size=args.base.batch_size, shuffle=False)
-#dataset.postprocessing(test_index, addNoise=True, sigma=0.5, ratio_noise=0.1, addConflict=True, ratio_conflict=0.4)
+if args.dataset.add_postprocessing:
+    dataset.postprocessing(test_index, addNoise=True, sigma=0.5, ratio_noise=0.1, addConflict=True, ratio_conflict=0.4)
 print(num_samples,num_classes,num_views,dims)
 
 
