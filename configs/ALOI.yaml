@@ -17,4 +17,5 @@ base:
 dataset:
   datasetName: ALOI
   dataPath: datasets\ALOI_100.mat
+  add_postprocessing: false
 
