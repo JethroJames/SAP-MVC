@@ -25,29 +25,37 @@ class SAPRMVL(nn.Module):
         super(SAPRMVL, self).__init__()
         self.num_views = num_views
         self.num_classes = num_classes
-        self.dims = dims 
+        self.dims = dims
         self.batch_size = batch_size
-        self.use_cosine = False
-        self.FeatureCollectors = nn.ModuleList([FeatureCollector(dims[i], self.num_classes) for i in range(self.num_views)])
-        self.prototypes = [torch.zeros(num_classes, num_classes, requires_grad=True) for i in range(self.num_views)]
-        self.logits_all = [torch.zeros(batch_size, num_classes, requires_grad=True) for i in range(self.num_views)]
-        self.preds_all = [torch.zeros(batch_size, requires_grad=True)]
+        self.FeatureCollectors = nn.ModuleList([
+            FeatureCollector(dims[i], self.num_classes) for i in range(self.num_views)
+        ])
+        self.softplus = nn.Softplus()
+
     def forward(self, X, Y, noise_std=0.0):
-        features = dict()
-        prototypes = dict()
-        evidences = dict()
+        device = X[0].device
+        features = {}
+        evidences = {}
+        prototypes = {}
         for v in range(self.num_views):
-            features[v] = self.FeatureCollectors[v](X[v])
+            feat = self.FeatureCollectors[v](X[v])
             if noise_std > 0:
-                noise = torch.randn_like(features[v]) * noise_std 
-                features[v] += noise
-            softplus = nn.Softplus()
-            evidences[v] = softplus(features[v])
-            prototypes[v] = torch.zeros(self.num_classes, self.num_classes)
-            for c in range(self.num_classes):
-                class_features = features[v][Y == c]
-                prototypes[v][c] = class_features.mean(dim=0)
+                feat = feat + torch.randn_like(feat) * noise_std
+            features[v] = feat
+            evidences[v] = self.softplus(feat)
+            prototypes[v] = self._compute_prototypes(feat, Y, self.num_classes, device)
         return features, prototypes, evidences
+
+    @staticmethod
+    def _compute_prototypes(features, labels, num_classes, device):
+        B, D = features.size()
+        prototypes = torch.zeros(num_classes, D, device=device)
+        counts = torch.zeros(num_classes, device=device)
+        prototypes = prototypes.index_add(0, labels, features)
+        counts = counts.index_add(0, labels, torch.ones_like(labels, dtype=torch.float))
+        counts = counts.clamp(min=1).unsqueeze(1)
+        prototypes = prototypes / counts
+        return prototypes
 
 class FeatureCollector(nn.Module):
     def __init__(self, dims, num_classes):
