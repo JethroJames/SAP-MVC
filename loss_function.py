@@ -69,7 +69,7 @@ def edl_digamma_loss(alpha, target, epoch_num, num_classes, annealing_step, devi
     loss = edl_loss(torch.digamma, target, alpha, epoch_num, num_classes, annealing_step, device)
     return torch.mean(loss)
 
-def knn_distance(features, k=1):
+def knn_distance(features, k=32):
     num_samples = features.size(0)
     if num_samples == 0:
         return 0 
@@ -79,7 +79,7 @@ def knn_distance(features, k=1):
     _, indices = distances.topk(num_samples, dim=1, largest=False)
     return indices, distances
 
-def knn_cosine_similarity(features, k=1):
+def knn_cosine_similarity(features, k=32):
     batch_size = features.size(0)
     if batch_size == 0:
         return 0
@@ -101,7 +101,7 @@ def prototype_alignment_loss(num_classes, num_views, batch_size, prototypes, lab
     return loss / (batch_size * num_views)
     
 
-def prototype_neighbor_loss(num_classes, num_views, batch_size, features, prototypes, Y, device, k=1, margin=1.0):
+def prototype_neighbor_loss(num_classes, num_views, batch_size, features, prototypes, Y, device, k=32, margin=1.0):
     loss = 0.0    
     for v in range(num_views):
         view_features = features[v].to(device)
@@ -131,7 +131,7 @@ def get_prototypes(labels, class_prototypes):
     neg_proto = class_prototypes[neg_indices]
     return pos_proto, neg_proto
 
-def triplet_loss_knn(num_classes, num_views, batch_size, features, prototypes, Y, device, k=1, margin=1.0):
+def triplet_loss_knn(num_classes, num_views, batch_size, features, prototypes, Y, device, k=32, margin=1.0):
     loss = 0
     for v in range(num_views):
         loss_v = 0
